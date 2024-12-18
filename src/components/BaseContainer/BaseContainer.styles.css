@@ -1,0 +1,11 @@
+.base-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: scroll;
+    scroll-snap-type: both mandatory;
+    scrollbar-width: none; /* Firefox compatibility*/
+}
+
+.base-container::-webkit-scrollbar {
+    display: none;  /* WebKit compatibility */
+}
