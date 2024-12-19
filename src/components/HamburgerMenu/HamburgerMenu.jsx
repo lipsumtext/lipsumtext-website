@@ -1,29 +1,25 @@
 import Hamburger from "hamburger-react"
 import './HamburgerMenu.styles.css'
 
-const MenuItself = () => {
+const MenuItself = ({ setMenuOpen }) => {
+    const pages = {
+        'About Us': '#',
+        'Our Team': '#',
+        'Projects': '#',
+        'Contact Us': '#'
+    }
+
     return <div className="menu-itself">
         <ul className="pages">
-            <li>
-                <a href=''>
-                    About Us
-                </a>
-            </li>
-            <li>
-                <a href=''>
-                    Our Team
-                </a>
-            </li>
-            <li>
-                <a href=''>
-                    Projects
-                </a>
-            </li>
-            <li>
-                <a href=''>
-                    Contact Us
-                </a>
-            </li>
+            {Object.entries(pages).map(([page, ref]) => (
+                <li 
+                    style={{
+                        animation: `fadeFromBottom 0.5s ease 0.${Object.keys(pages).indexOf(page)}s 1 normal backwards`
+                    }}
+                >
+                    <a href={ref} onClick={() => setMenuOpen(false)}>{page}</a>
+                </li>
+            ))}
         </ul>
     </div>
 }
@@ -37,6 +33,6 @@ export const HamburgerMenu = ({ menuOpen, setMenuOpen }) => {
                 toggle={setMenuOpen}
             />
         </div>
-        {menuOpen && <MenuItself />}
+        {menuOpen && <MenuItself setMenuOpen={setMenuOpen}/>}
     </>
 }
