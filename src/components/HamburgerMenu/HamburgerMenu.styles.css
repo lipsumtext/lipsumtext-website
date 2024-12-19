@@ -1,0 +1,57 @@
+.menu-itself {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(54, 69, 79, 0.75);
+    position: fixed;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: min(4em, 12.5vw);
+    font-weight: 500;
+    backdrop-filter: blur(4px);
+}
+
+.pages {
+    list-style: none;
+    display: flex;
+    flex-flow: column;
+    gap: 12px;
+    margin-left: min(8vw, 200px);
+    margin-right: auto;
+    user-select: none;
+
+    a {
+        text-decoration: none;
+    }
+    
+    li {
+        padding-left: 20px;
+        color: var(--primary-color);
+    }
+
+    li:hover {
+        border-left: solid .25em var(--secondary-color);
+        transition: 0.2s;
+        font-weight: 700;
+    }
+}
+
+@keyframes fadeFromBottom {
+	0% {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.hamburger-container {
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    z-index: 2;
+}
