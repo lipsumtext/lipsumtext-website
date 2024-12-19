@@ -12,13 +12,15 @@ const MenuItself = ({ setMenuOpen }) => {
     return <div className="menu-itself">
         <ul className="pages">
             {Object.entries(pages).map(([page, ref]) => (
-                <li 
-                    style={{
-                        animation: `fadeFromBottom 0.5s ease 0.${Object.keys(pages).indexOf(page)}s 1 normal backwards`
-                    }}
-                >
-                    <a href={ref} onClick={() => setMenuOpen(false)}>{page}</a>
-                </li>
+                <a href={ref} onClick={() => setMenuOpen(false)}>
+                    <li 
+                        style={{
+                            animation: `fadeFromBottom 0.5s ease 0.${Object.keys(pages).indexOf(page)}s 1 normal backwards`
+                        }}
+                    >
+                        {page}
+                    </li>   
+                </a>
             ))}
         </ul>
     </div>

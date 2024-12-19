@@ -21,19 +21,19 @@
     margin-right: auto;
     user-select: none;
 
+    a {
+        text-decoration: none;
+    }
+    
     li {
         padding-left: 20px;
+        color: var(--primary-color);
     }
 
     li:hover {
         border-left: solid .25em var(--secondary-color);
         transition: 0.2s;
         font-weight: 700;
-    }
-
-    li > a {
-        text-decoration: none;
-        color: var(--primary-color);
     }
 }
 
